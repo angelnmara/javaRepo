@@ -45,10 +45,10 @@ public class EjecutaConsulta {
 		if (connection != null) {
 			System.out.println("You made it, take control your database now!");			
 			Statement st = connection.createStatement();
-			ResultSet rs = st.executeQuery("select * from tbcatcampo;");
+			ResultSet rs = st.executeQuery("select array_to_json(array_agg(row_to_json(t))) from (select * from tbcatcampo) t");
 			while(rs.next()) {
 				System.out.print("columna uno regresada ");
-				System.out.println(rs.getString(2));
+				System.out.println(rs.getString(1));
 			}
 			rs.close();
 			st.close();
