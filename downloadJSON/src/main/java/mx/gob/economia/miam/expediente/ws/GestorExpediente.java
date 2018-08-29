@@ -8,6 +8,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 
 
+import mx.gob.economia.miam.expediente.dbAcces.*;
+
 @Path("GestorExpediente")
 @Consumes("application/json")
 @Produces("application/json")
@@ -33,7 +35,11 @@ public class GestorExpediente {
 		//JsonNode rootNode = mapper.readValue(ae.getRespuesta(), JsonNode.class);
 		
 		//salida = ((nodo == null) ? ae.getRespuesta() : rootNode.findValue(nodo).toString());
-						
+		
+
+		EjecutaConsulta ec = new EjecutaConsulta();
+		//ec.selectDB("");
+		
 		System.out.println(salida);
 				
 		return "{\"hola\":\"" + salida + "\"}";
