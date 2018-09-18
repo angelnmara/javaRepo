@@ -7,8 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 
-
-import mx.gob.economia.miam.expediente.dbAcces.*;
+import com.lamarrulla.dbAcces.*;
 
 @Path("GestorExpediente")
 @Consumes("application/json")
